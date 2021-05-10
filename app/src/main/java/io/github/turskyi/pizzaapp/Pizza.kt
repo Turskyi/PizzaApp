@@ -6,8 +6,8 @@ class Pizza private constructor(
 ) {
     companion object {
         val pizzas = arrayOf(
-            Pizza("Diavolo", R.drawable.diavolo),
-            Pizza("Funghi", R.drawable.funghi)
+            Pizza("Diavolo", R.drawable.pic_diavolo),
+            Pizza("Funghi", R.drawable.pic_funghi)
         )
     }
 }
