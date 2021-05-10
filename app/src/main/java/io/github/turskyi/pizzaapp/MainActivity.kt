@@ -9,20 +9,24 @@ import androidx.appcompat.widget.ShareActionProvider
 import androidx.core.view.MenuItemCompat
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
-import kotlinx.android.synthetic.main.activity_main.*
+import io.github.turskyi.pizzaapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(R.layout.activity_main) {
-    private var shareActionProvider: ShareActionProvider? = null
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var shareActionProvider: ShareActionProvider
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setSupportActionBar(toolbar)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        setSupportActionBar(binding.toolbar)
 
         /* Attach the SectionsPagerAdapter to the ViewPager */
         val pagerAdapter = SectionsPagerAdapter(this)
-        pager.adapter = pagerAdapter
+        binding.pager.adapter = pagerAdapter
 
         /* Attach the ViewPager to the TabLayout */
-        TabLayoutMediator(tabs, pager) { tab, position ->
+        TabLayoutMediator(binding.tabs, binding.pager) { tab, position ->
             tab.text = pagerAdapter.getPageTitle(position)
         }.attach()
     }
@@ -36,13 +40,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         return super.onCreateOptionsMenu(menu)
     }
 
-    private fun String.setShareActionIntent() {
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_TEXT, this)
-        shareActionProvider?.setShareIntent(intent)
-    }
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_create_order -> {
@@ -52,6 +49,13 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun String.setShareActionIntent() {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "text/plain"
+        intent.putExtra(Intent.EXTRA_TEXT, this)
+        shareActionProvider.setShareIntent(intent)
     }
 
     private inner class SectionsPagerAdapter(activity: AppCompatActivity) :
