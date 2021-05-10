@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
 import io.github.turskyi.pizzaapp.databinding.ActivityOrderBinding
 
-class OrderActivity : AppCompatActivity(R.layout.activity_order) {
+class OrderActivity : AppCompatActivity() {
     private lateinit var binding: ActivityOrderBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
