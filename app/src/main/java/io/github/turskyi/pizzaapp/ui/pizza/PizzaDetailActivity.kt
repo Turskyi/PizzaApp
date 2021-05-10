@@ -1,4 +1,4 @@
-package io.github.turskyi.pizzaapp
+package io.github.turskyi.pizzaapp.ui.pizza
 
 import android.os.Bundle
 import android.widget.ImageView
@@ -8,6 +8,8 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
+import io.github.turskyi.pizzaapp.Pizza
+import io.github.turskyi.pizzaapp.R
 
 class PizzaDetailActivity : AppCompatActivity(R.layout.activity_pizza_detail) {
     companion object {

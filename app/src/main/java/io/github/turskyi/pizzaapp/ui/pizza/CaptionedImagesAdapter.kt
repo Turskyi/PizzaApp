@@ -1,4 +1,4 @@
-package io.github.turskyi.pizzaapp
+package io.github.turskyi.pizzaapp.ui.pizza
 
 import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import io.github.turskyi.pizzaapp.R
 
 internal class CaptionedImagesAdapter(
     private val captions: Array<String?>,

@@ -10,6 +10,11 @@ import androidx.core.view.MenuItemCompat
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import io.github.turskyi.pizzaapp.databinding.ActivityMainBinding
+import io.github.turskyi.pizzaapp.ui.OrderActivity
+import io.github.turskyi.pizzaapp.ui.PastaFragment
+import io.github.turskyi.pizzaapp.ui.StoresFragment
+import io.github.turskyi.pizzaapp.ui.TopFragment
+import io.github.turskyi.pizzaapp.ui.pizza.PizzaFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding

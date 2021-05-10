@@ -1,4 +1,4 @@
-package io.github.turskyi.pizzaapp
+package io.github.turskyi.pizzaapp.ui.pizza
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import io.github.turskyi.pizzaapp.Pizza
+import io.github.turskyi.pizzaapp.R
 
 /**
  * A simple [PizzaFragment] subclass.
@@ -16,7 +18,7 @@ class PizzaFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val pizzaRecycler: RecyclerView = inflater.inflate(
             R.layout.fragment_pizza, container, false
         ) as RecyclerView

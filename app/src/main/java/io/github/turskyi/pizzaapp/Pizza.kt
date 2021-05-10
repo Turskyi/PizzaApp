@@ -1,6 +1,6 @@
 package io.github.turskyi.pizzaapp
 
-class Pizza private constructor(
+data class Pizza constructor(
     val name: String,
     val imageResourceId: Int
 ) {

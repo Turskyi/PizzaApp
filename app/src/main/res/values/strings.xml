@@ -36,4 +36,5 @@
     <string name="order_name_hint">Please enter your name</string>
     <string name="order_details_hint">Please enter your order</string>
     <string name="create_order">Create Order</string>
+    <string name="content_description_image">image</string>
 </resources>
